@@ -1,0 +1,7 @@
+imports_granularity = "Item"
+group_imports = "StdExternalCrate"
+struct_field_align_threshold = 20
+overflow_delimited_expr = true
+force_multiline_blocks = true
+match_block_trailing_comma = true
+max_width = 100
