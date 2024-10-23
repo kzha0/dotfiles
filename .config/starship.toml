@@ -1,0 +1,168 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$os\
+$username\
+$c\
+$rust\
+$golang\
+$deno\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$conda\
+$docker_context\
+[(\\[( $git_branch)( $git_status) \\] )](bold fg:green)\
+$time\
+$line_break\
+$directory $character
+"""
+
+palette = "ayu"
+
+[palettes.ayu]
+primary = "#bfbdb6"
+secondary = "#ACB6BF8C"
+accent = "#ff8f40"
+red= "#f07178"
+orange = "#ff8f40"
+yellow = "#ffb454"
+green = "#AAD94C"
+purple = "#d2a6ff"
+blue = "#59c2ff"
+error = "#d95757"
+warning = "#e6b450"
+
+[os]
+disabled = false
+format = "[$symbol ](bold fg:blue)"
+
+[username]
+show_always = true
+style_user = "bold fg:orange"
+style_root = "bold fg:orange"
+format = "[\\[ @ $user \\] ]($style)"
+
+[git_branch]
+symbol = ""
+style = "bold fg:green"
+format = "[($symbol( $branch) )]($style)"
+
+[git_status]
+style = "bold fg:green"
+format = "[$all_status$ahead_behind]($style)"
+
+[character]
+disabled = false
+success_symbol = "[❯](bold fg:orange)"
+error_symbol = "[❯](bold fg:error)"
+vimcmd_symbol = "[❮](bold fg:orange)"
+vimcmd_replace_one_symbol = "[❮](bold fg:purple)"
+vimcmd_replace_symbol = "[❮](bold fg:purple)"
+vimcmd_visual_symbol = "[❮](bold fg:yellow)"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bold fg:primary"
+format = "[$time]($style)"
+
+[line_break]
+disabled = false
+
+[directory]
+style = "bold fg:primary"
+format = "[$path]($style)"
+truncation_length = 5
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[deno]
+symbol = "deno 🦕"
+style = "bold fg:yellow"
+format = "[\\[ $symbol( $version) \\] ]($style)"
+
+[nodejs]
+symbol = "node "
+style = "bold fg:yellow"
+format = "[\\[ $symbol( $version) \\] ]($style)"
+
+[c]
+symbol = "c  "
+style = "bold fg:yellow"
+format = "[\\[ $symbol( $version) \\] ]($style)"
+
+[rust]
+symbol = "rust "
+style = "bold fg:yellow"
+format = "[\\[ $symbol( $version) \\] ]($style)"
+
+[golang]
+symbol = "go "
+style = "bold fg:yellow"
+format = "[\\[ $symbol( $version) \\] ]($style)"
+
+[php]
+symbol = "php "
+style = "bold fg:yellow"
+format = "[\\[ $symbol( $version) \\] ]($style)"
+
+[java]
+symbol = "java "
+style = "bold fg:yellow"
+format = "[\\[ $symbol( $version) \\] ]($style)"
+
+[kotlin]
+symbol = "kotlin "
+style = "bold fg:yellow"
+format = "[\\[ $symbol( $version) \\] ]($style)"
+
+[haskell]
+symbol = "haskell "
+style = "bold fg:yellow"
+format = "[\\[ $symbol( $version) \\] ]($style)"
+
+[python]
+symbol = "python "
+style = "bold fg:yellow"
+format = "[\\[ ${symbol}( $pyenv_prefix)( $version)( \\($virtualenv\\)) \\] ]($style)"
+
+[conda]
+symbol = "conda 🅒"
+style = "bold fg:yellow"
+format = "[\\[ ${symbol}( $environment) \\] ]($style)"
+
+[docker_context]
+symbol = "docker "
+style = "bold fg:yellow"
+format = "[\\[ $symbol( $context) \\] ]($style)"
+
+[os.symbols]
+Windows = "󰍲 "
+Ubuntu = "󰕈 "
+SUSE = " "
+Raspbian = "󰐿 "
+Mint = "󰣭 "
+Macos = "󰀵 "
+Manjaro = " "
+Linux = "󰌽 "
+Gentoo = "󰣨 "
+Fedora = "󰣛 "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = "󰣇 "
+Artix = "󰣇 "
+CentOS = " "
+Debian = "󰣚 "
+Redhat = "󱄛 "
+RedHatEnterprise = "󱄛 "
